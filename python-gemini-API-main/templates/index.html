@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>⚽ AI Football Assistant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f0f8ff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .chat-box {
+      max-width: 800px;
+      margin: 50px auto;
+      background: rgb(204, 236, 241);
+      border-radius: 15px;
+      box-shadow: 0px 0px 15px rgb(232, 227, 227);
+      padding: 30px;
+    }
+    .chat-bubble {
+      background-color: #e1f6e9;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      white-space: pre-line;
+    }
+    .title {
+      font-weight: bold;
+      font-size: 1.8rem;
+      text-align: center;
+      color: #1e90ff;
+    }
+    .btn-football {
+      background-color: #1e90ff;
+      color: white;
+    }
+    textarea {
+      resize: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-box">
+    <div class="title">⚽ AI ผู้ช่วยการเล่นบอล</div>
+    <form method="post" class="mt-4">
+      <div class="mb-3">
+        <label for="prompt" class="form-label">พิมพ์คำถามของคุณ เช่น "ช่วยแนะนำวิธีฝึกเลี้ยงบอล"</label>
+        <textarea name="prompt" class="form-control" rows="4" placeholder="ตัวอย่าง: อยากได้เทคนิคซ้อมยิงประตูให้แม่นยำ..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-football">ถาม AI</button>
+    </form>
+
+    {% if result %}
+    <div class="chat-bubble">
+      <strong>💬 คำตอบจาก AI:</strong><br>
+      {{ result }}
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
